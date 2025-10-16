@@ -1,4 +1,16 @@
 /* Header Top */
+
+header {
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1000;
+    opacity: 0;
+}
+
+header.show {
+    opacity: 1;
+    transform: translateY(-4px);
+}
+
 .header-top {
     background: var(--surface);
     border-bottom: 1px solid var(--border);
@@ -21,6 +33,7 @@
     color: var(--text-secondary);
     text-decoration: none;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .top-links a:hover {
@@ -36,6 +49,7 @@
     color: var(--text-secondary);
     text-decoration: none;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .top-actions a:hover {
@@ -226,6 +240,14 @@
 .header-nav {
     background: var(--background);
     border-bottom: 1px solid var(--border);
+    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    z-index: 1000;
+    opacity: 0;
+}
+
+.header-nav.show {
+    opacity: 1;
+    transform: translateY(-4px);
 }
 
 .nav-menu {
@@ -246,6 +268,7 @@
     font-weight: 500;
     transition: var(--transition);
     position: relative;
+    cursor: pointer;
 }
 
 .nav-item > a:hover {
@@ -308,6 +331,7 @@
     text-decoration: none;
     transition: var(--transition);
     padding: 4px 0;
+    cursor: pointer;
 }
 
 .dropdown-column a:hover {
@@ -338,6 +362,7 @@
     font-size: 0.7rem;
     position: relative;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .mobile-nav-item.active {

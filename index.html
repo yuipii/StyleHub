@@ -11,14 +11,14 @@
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
+    <header class="header" id="Header">
         <div class="header-top">
             <div class="container">
                 <div class="top-links">
-                    <a href="#">Доставка и оплата</a>
-                    <a href="#">Возврат</a>
-                    <a href="#">Помощь</a>
-                    <a href="#">Бонусная программа</a>
+                    <a href="#" class="top-link">Доставка и оплата</a>
+                    <a href="#" class="top-link">Возврат</a>
+                    <a href="#" class="top-link">Помощь</a>
+                    <a href="#" class="top-link">Бонусная программа</a>
                 </div>
                 <div class="top-actions">
                     <a href="#" id="location">Москва</a>
@@ -29,11 +29,12 @@
 
         <div class="header-main">
             <div class="container">
-                <div class="logo">
-                    <img src="images/logo.png" alt="StyleHub">
-                    <span>StyleHub</span>
-                </div>
-
+                <a href="index.html" style="text-decoration: none;">
+               <div class="logo" style="cursor: pointer;">
+                    <div style="width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">SH</div>
+            <span>StyleHub</span>
+                </div> 
+                </a>
                 <div class="search-bar">
                     <div class="search-container">
                         <input type="text" id="searchInput" placeholder="Поиск по 10,000+ товаров...">
@@ -51,18 +52,19 @@
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                             <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill="currentColor"/>
                         </svg>
-                        <span class="action-count">3</span>
+                        <span class="action-count">0</span>
                     </button>
                     <button class="action-btn" id="compareBtn">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                             <path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="currentColor"/>
                         </svg>
+                        <span class="action-count">0</span>
                     </button>
                     <button class="action-btn" id="cartBtn">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
                             <path d="M17 18C18.1046 18 19 18.8954 19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18ZM1 2H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6L7 18H19" stroke="currentColor" stroke-width="2"/>
                         </svg>
-                        <span class="action-count">2</span>
+                        <span class="action-count">0</span>
                     </button>
                     <button class="auth-btn" id="authBtn">
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -75,7 +77,7 @@
             </div>
         </div>
 
-        <nav class="header-nav">
+        <nav class="header-nav" id="Header-nav">
             <div class="container">
                 <ul class="nav-menu">
                     <li class="nav-item dropdown">
@@ -105,7 +107,19 @@
                     <li class="nav-item dropdown">
                         <a href="catalog.html?category=men">Мужчинам</a>
                         <div class="dropdown-menu">
-                            <!-- Similar structure for men -->
+                            <div class="dropdown-column">
+                                <h4>Одежда</h4>
+                                <a href="catalog.html?category=men&subcategory=shirts">Рубашки</a>
+                                <a href="catalog.html?category=men&subcategory=jackets">Куртки</a>
+                                <a href="catalog.html?category=men&subcategory=pants">Брюки</a>
+                                <a href="catalog.html?category=men&subcategory=tshirts">Футболки</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>Обувь</h4>
+                                <a href="catalog.html?category=men&subcategory=sneakers">Кроссовки</a>
+                                <a href="catalog.html?category=men&subcategory=boots">Ботинки</a>
+                                <a href="catalog.html?category=men&subcategory=loafers">Лоферы</a>
+                            </div>
                         </div>
                     </li>
                     <li class="nav-item"><a href="catalog.html?category=shoes">Обувь</a></li>
@@ -120,16 +134,16 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="Hero">
         <div class="hero-slider">
             <div class="slide active">
                 <div class="slide-content">
-                    <h1>Новая коллекция Осень-Зима 2024</h1>
+                    <h1>Новая коллекция Осень-Зима 2025</h1>
                     <p>Откройте для себя тренды нового сезона</p>
                     <button class="hero-cta">Смотреть коллекцию</button>
                 </div>
                 <div class="slide-image">
-                    <img src="images/heroes/fall-winter.jpg" alt="Осень-Зима 2024">
+                    <img src="png/autumn-winter.jpg" alt="Осень-Зима 2025">
                 </div>
             </div>
         </div>
@@ -177,39 +191,35 @@
             <div class="categories-grid">
                 <a href="catalog.html?category=women&subcategory=dresses" class="category-card">
                     <div class="category-image">
-                        <img src="images/categories/dresses.jpg" alt="Платья">
+                        <img src="png/plat'e1.jpg" alt="Платья">
                     </div>
                     <div class="category-name">Платья</div>
                 </a>
                 <a href="catalog.html?category=men&subcategory=shirts" class="category-card">
                     <div class="category-image">
-                        <img src="images/categories/shirts.jpg" alt="Рубашки">
+                        <img src="png/rubashkijpg.jpg" alt="Рубашки">
                     </div>
                     <div class="category-name">Рубашки</div>
                 </a>
                 <a href="catalog.html?category=shoes&subcategory=sneakers" class="category-card">
                     <div class="category-image">
-                        <img src="images/categories/sneakers.jpg" alt="Кроссовки">
+                        <img src="png/krossovki.jpg" alt="Кроссовки">
                     </div>
                     <div class="category-name">Кроссовки</div>
                 </a>
                 <a href="catalog.html?category=accessories&subcategory=bags" class="category-card">
                     <div class="category-image">
-                        <img src="images/categories/bags.jpg" alt="Сумки">
+                        <img src="png/sumki.jpg" alt="Сумки">
                     </div>
                     <div class="category-name">Сумки</div>
                 </a>
                 <a href="catalog.html?category=women&subcategory=jeans" class="category-card">
                     <div class="category-image">
-                        <img src="images/categories/jeans.jpg" alt="Джинсы">
+                        <img src="png/djinsi.jpg" alt="Джинсы">
                     </div>
                     <div class="category-name">Джинсы</div>
                 </a>
                 <a href="catalog.html?category=beauty" class="category-card">
-                    <div class="category-image">
-                        <img src="images/categories/beauty.jpg" alt="Красота">
-                    </div>
-                    <div class="category-name">Красота</div>
                 </a>
             </div>
         </div>
@@ -234,22 +244,22 @@
             <h2 class="section-title">Популярные бренды</h2>
             <div class="brands-grid">
                 <a href="catalog.html?brand=zara" class="brand-logo">
-                    <img src="images/brands/zara.png" alt="Zara">
+                    <img src="png/zara.png" alt="Zara">
                 </a>
                 <a href="catalog.html?brand=h&m" class="brand-logo">
-                    <img src="images/brands/hm.png" alt="H&M">
+                    <img src="png/h8.png" alt="H&M">
                 </a>
                 <a href="catalog.html?brand=nike" class="brand-logo">
-                    <img src="images/brands/nike.png" alt="Nike">
+                    <img src="png/Nike.jpg" alt="Nike">
                 </a>
                 <a href="catalog.html?brand=adidas" class="brand-logo">
-                    <img src="images/brands/adidas.png" alt="Adidas">
+                    <img src="png/addidas.jpg" alt="Adidas">
                 </a>
                 <a href="catalog.html?brand=levis" class="brand-logo">
-                    <img src="images/brands/levis.png" alt="Levi's">
+                    <img src="png/lefis.png" alt="Levi's">
                 </a>
                 <a href="catalog.html?brand=mac" class="brand-logo">
-                    <img src="images/brands/mac.png" alt="MAC">
+                    <img src="png/mac.png" alt="MAC">
                 </a>
             </div>
         </div>
@@ -270,26 +280,26 @@
                     <button class="stylist-cta">Записаться на консультацию</button>
                 </div>
                 <div class="stylist-image">
-                    <img src="images/stylist.jpg" alt="Персональный стилист">
+                    <img src="png/stilist.jpg" alt="Персональный стилист">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+   <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-main">
                 <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="images/logo.png" alt="StyleHub">
-                        <span>StyleHub</span>
-                    </div>
-                    <p>Модная одежда, обувь и аксессуары с доставкой по всей России</p>
+                     <div class="footer-logo">
+                    <div style="width: 32px; height: 32px; background: var(--accent); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">SH</div>
+            <span>StyleHub</span>
+                </div>
+                <p>Модная одежда, обувь и аксессуары с доставкой по всей России. Более 1000 брендов и 50,000 товаров в каталоге.</p>
                     <div class="social-links">
-                        <a href="#" aria-label="VKontakte">VK</a>
-                        <a href="#" aria-label="Telegram">TG</a>
-                        <a href="#" aria-label="Instagram">IG</a>
+                        <a href="#" aria-label="VKontakte" title="VKontakte">VK</a>
+                        <a href="#" aria-label="Telegram" title="Telegram">TG</a>
+                        <a href="#" aria-label="Instagram" title="Instagram">IG</a>
                     </div>
                 </div>
 
@@ -328,7 +338,7 @@
                         </div>
                         <div class="contact-item">
                             <strong>Ежедневно 9:00-21:00</strong>
-                            <span>Время работы</span>
+                            <span>Время работы поддержки</span>
                         </div>
                     </div>
                 </div>
@@ -347,8 +357,7 @@
                 </div>
             </div>
         </div>
-    </footer>
-
+    </footer> 
     <!-- Mobile Bottom Navigation -->
     <div class="mobile-nav">
         <a href="index.html" class="mobile-nav-item active">
@@ -377,7 +386,7 @@
                 <path d="M17 18C18.1046 18 19 18.8954 19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18ZM1 2H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6L7 18H19" stroke="currentColor" stroke-width="2"/>
             </svg>
             <span>Корзина</span>
-            <span class="mobile-badge">2</span>
+            <span class="mobile-badge">0</span>
         </a>
         <a href="#" class="mobile-nav-item" id="mobileProfileBtn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -389,7 +398,5 @@
 
     <!-- Scripts -->
     <script src="js/main.js"></script>
-    <script src="js/search.js"></script>
-    <script src="js/recommendations.js"></script>
 </body>
 </html>

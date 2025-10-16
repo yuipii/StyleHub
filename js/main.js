@@ -1,4 +1,24 @@
 // Main application functionality
+
+const $hero = document.getElementById('Hero');
+const $header = document.getElementById('Header')
+const $Headernav = document.getElementById('Header-nav')
+
+// SetTimeOut
+
+setTimeout(() => {
+    $hero.classList.add('show');
+}, 500);
+
+setTimeout(() => {
+    $header.classList.add('show');
+}, 300);
+
+setTimeout(() => {
+    $Headernav.classList.add('show');
+}, 1000);
+
+
 class FashionStore {
     constructor() {
         this.cart = JSON.parse(localStorage.getItem('cart')) || [];
@@ -11,8 +31,10 @@ class FashionStore {
     
     init() {
         this.setupEventListeners();
+        this.setupInteractiveButtons();
         this.updateCartCount();
         this.updateWishlistCount();
+        this.updateCompareCount();
         this.loadNewArrivals();
         this.setupMobileNavigation();
     }
@@ -25,6 +47,9 @@ class FashionStore {
         // Wishlist functionality
         document.getElementById('wishlistBtn')?.addEventListener('click', () => this.openWishlist());
         
+        // Compare functionality
+        document.getElementById('compareBtn')?.addEventListener('click', () => this.openCompare());
+        
         // Auth functionality
         document.getElementById('authBtn')?.addEventListener('click', () => this.openAuthModal());
         document.getElementById('mobileProfileBtn')?.addEventListener('click', () => this.openAuthModal());
@@ -34,6 +59,83 @@ class FashionStore {
         
         // Navigation
         this.setupNavigation();
+    }
+    
+    setupInteractiveButtons() {
+        // Hero CTA button
+        document.querySelector('.hero-cta')?.addEventListener('click', () => {
+            this.showNotification('🎉 Открываем новую коллекцию! Скидка 15% на первую покупку');
+            setTimeout(() => {
+                window.location.href = 'catalog.html?new=true';
+            }, 2000);
+        });
+
+        // Stylist CTA button
+        document.querySelector('.stylist-cta')?.addEventListener('click', () => {
+            this.showNotification('👗 Запись на консультацию стилиста! Мы свяжемся с вами в течение 24 часов');
+        });
+
+        // Category cards
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                e.preventDefault();
+                const categoryName = card.querySelector('.category-name').textContent;
+                this.showNotification(`📁 Открываем категорию: ${categoryName}`);
+                setTimeout(() => {
+                    window.location.href = card.getAttribute('href');
+                }, 1500);
+            });
+        });
+
+        // Brand logos
+        document.querySelectorAll('.brand-logo').forEach(brand => {
+            brand.addEventListener('click', (e) => {
+                e.preventDefault();
+                const brandName = brand.querySelector('img').alt;
+                this.showNotification(`🏷️ Смотрим товары бренда ${brandName}`);
+                setTimeout(() => {
+                    window.location.href = brand.getAttribute('href');
+                }, 1500);
+            });
+        });
+
+        // Section links
+        document.querySelectorAll('.section-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                this.showNotification('🔄 Загружаем все товары...');
+                setTimeout(() => {
+                    window.location.href = link.getAttribute('href');
+                }, 1000);
+            });
+        });
+
+        // Top links
+        document.querySelectorAll('.top-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent;
+                this.showNotification(`ℹ️ Открываем раздел: ${linkText}`);
+            });
+        });
+
+        // Footer links
+        document.querySelectorAll('.footer-links a, .footer-section ul a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const linkText = link.textContent;
+                this.showNotification(`📄 Открываем: ${linkText}`);
+            });
+        });
+
+        // Social links
+        document.querySelectorAll('.social-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const platform = link.textContent;
+                this.showNotification(`🌐 Переходим в ${platform} (в реальном приложении откроется ссылка)`);
+            });
+        });
     }
     
     setupNavigation() {
@@ -89,7 +191,7 @@ class FashionStore {
                 brand: "Zara",
                 price: 3990,
                 oldPrice: 5990,
-                image: "images/products/dress1.jpg",
+                image: "png/1.jpg",
                 badges: ['new'],
                 sizes: ['XS', 'S', 'M', 'L']
             },
@@ -98,11 +200,67 @@ class FashionStore {
                 name: "Кроссовки кожаные белые",
                 brand: "Nike",
                 price: 8990,
-                image: "images/products/sneakers1.jpg",
+                image: "png/2.jpg",
                 badges: ['hit'],
                 sizes: ['36', '37', '38', '39', '40']
             },
-            // Add more products...
+            {
+                id: 3,
+                name: "Джинсы скинни с высокой талией",
+                brand: "Levi's",
+                price: 4590,
+                oldPrice: 5990,
+                image: "png/3.1.jpg",
+                badges: ['sale'],
+                sizes: ['25', '26', '27', '28', '29']
+            },
+            {
+                id: 4,
+                name: "Кожаная куртка черная",
+                brand: "Massimo Dutti",
+                price: 12990,
+                image: "png/4.1.jpg",
+                badges: ['new'],
+                sizes: ['XS', 'S', 'M', 'L', 'XL']
+            },
+            {
+                id: 5,
+                name: "Шелковая блузка бежевая",
+                brand: "Mango",
+                price: 3490,
+                oldPrice: 4990,
+                image: "png/5.jpg",
+                badges: ['sale'],
+                sizes: ['XS', 'S', 'M', 'L']
+            },
+            {
+                id: 6,
+                name: "Сумка через плечо",
+                brand: "Michael Kors",
+                price: 15990,
+                image: "png/6.jpg",
+                badges: ['new'],
+                sizes: ['ONE SIZE']
+            },
+            {
+                id: 7,
+                name: "Туфли на каблуке",
+                brand: "Steve Madden",
+                price: 6990,
+                image: "png/7.jpg",
+                badges: ['hit'],
+                sizes: ['35', '36', '37', '38']
+            },
+            {
+                id: 8,
+                name: "Свитер оверсайз",
+                brand: "COS",
+                price: 5990,
+                oldPrice: 7990,
+                image: "png/8.jpg",
+                badges: ['sale'],
+                sizes: ['S', 'M', 'L', 'XL']
+            }
         ];
     }
     
@@ -176,7 +334,7 @@ class FashionStore {
         
         this.saveCart();
         this.updateCartCount();
-        this.showNotification('Товар добавлен в корзину');
+        this.showNotification('🛒 Товар добавлен в корзину');
     }
     
     toggleWishlist(productId) {
@@ -184,12 +342,12 @@ class FashionStore {
         
         if (index > -1) {
             this.wishlist.splice(index, 1);
-            this.showNotification('Товар удален из избранного');
+            this.showNotification('💔 Товар удален из избранного');
         } else {
             const product = this.getProductById(productId);
             if (product) {
                 this.wishlist.push(product);
-                this.showNotification('Товар добавлен в избранное');
+                this.showNotification('❤️ Товар добавлен в избранное');
             }
         }
         
@@ -202,25 +360,25 @@ class FashionStore {
         
         if (index > -1) {
             this.compare.splice(index, 1);
-            this.showNotification('Товар удален из сравнения');
+            this.showNotification('📊 Товар удален из сравнения');
         } else {
             if (this.compare.length >= 4) {
-                this.showNotification('Можно сравнивать не более 4 товаров', 'error');
+                this.showNotification('❌ Можно сравнивать не более 4 товаров', 'error');
                 return;
             }
             
             const product = this.getProductById(productId);
             if (product) {
                 this.compare.push(product);
-                this.showNotification('Товар добавлен к сравнению');
+                this.showNotification('📈 Товар добавлен к сравнению');
             }
         }
         
         this.saveCompare();
+        this.updateCompareCount();
     }
     
     getProductById(id) {
-        // In real app, this would fetch from API
         const allProducts = this.getNewProducts();
         return allProducts.find(product => product.id === id);
     }
@@ -238,6 +396,15 @@ class FashionStore {
         const count = this.wishlist.length;
         document.querySelectorAll('.action-count').forEach(element => {
             if (element.closest('#wishlistBtn')) {
+                element.textContent = count;
+            }
+        });
+    }
+    
+    updateCompareCount() {
+        const count = this.compare.length;
+        document.querySelectorAll('.action-count').forEach(element => {
+            if (element.closest('#compareBtn')) {
                 element.textContent = count;
             }
         });
@@ -297,25 +464,29 @@ class FashionStore {
     }
     
     openCart() {
-        window.location.href = 'cart.html';
+        this.showNotification('🛒 Открываем корзину с товарами...');
+        // window.location.href = 'cart.html';
     }
     
     openWishlist() {
-        window.location.href = 'wishlist.html';
+        this.showNotification('❤️ Открываем список избранных товаров...');
+        // window.location.href = 'wishlist.html';
+    }
+    
+    openCompare() {
+        this.showNotification('📊 Открываем сравнение товаров...');
+        // window.location.href = 'compare.html';
     }
     
     openAuthModal() {
-        // Implement auth modal
-        this.showNotification('Функция авторизации будет реализована позже', 'info');
+        this.showNotification('🔐 Открываем форму авторизации...');
     }
     
     focusSearch() {
         document.getElementById('searchInput')?.focus();
+        this.showNotification('🔍 Фокусируемся на поиске...');
     }
 }
-
-// Initialize the store
-const store = new FashionStore();
 
 // CSS animations for notifications
 const style = document.createElement('style');
@@ -364,3 +535,6 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Initialize the store
+const store = new FashionStore();
