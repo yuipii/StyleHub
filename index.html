@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StyleHub - Модная одежда и обувь</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <div class="top-links">
+                    <a href="#">Доставка и оплата</a>
+                    <a href="#">Возврат</a>
+                    <a href="#">Помощь</a>
+                    <a href="#">Бонусная программа</a>
+                </div>
+                <div class="top-actions">
+                    <a href="#" id="location">Москва</a>
+                    <a href="tel:+78005553535">8 800 555-35-35</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/logo.png" alt="StyleHub">
+                    <span>StyleHub</span>
+                </div>
+
+                <div class="search-bar">
+                    <div class="search-container">
+                        <input type="text" id="searchInput" placeholder="Поиск по 10,000+ товаров...">
+                        <button class="search-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M21 21L16.514 16.506L21 21ZM19 10.5C19 15.194 15.194 19 10.5 19C5.806 19 2 15.194 2 10.5C2 5.806 5.806 2 10.5 2C15.194 2 19 5.806 19 10.5Z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="search-suggestions" id="searchSuggestions"></div>
+                </div>
+
+                <div class="user-actions">
+                    <button class="action-btn" id="wishlistBtn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 21.35L10.55 20.03C5.4 15.36 2 12.28 2 8.5C2 5.42 4.42 3 7.5 3C9.24 3 10.91 3.81 12 5.09C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.42 22 8.5C22 12.28 18.6 15.36 13.45 20.04L12 21.35Z" fill="currentColor"/>
+                        </svg>
+                        <span class="action-count">3</span>
+                    </button>
+                    <button class="action-btn" id="compareBtn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path d="M10 18H14V16H10V18ZM3 6V8H21V6H3ZM6 13H18V11H6V13Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <button class="action-btn" id="cartBtn">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                            <path d="M17 18C18.1046 18 19 18.8954 19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18ZM1 2H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6L7 18H19" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span class="action-count">2</span>
+                    </button>
+                    <button class="auth-btn" id="authBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                            <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" stroke-width="2"/>
+                        </svg>
+                        <span>Войти</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <nav class="header-nav">
+            <div class="container">
+                <ul class="nav-menu">
+                    <li class="nav-item dropdown">
+                        <a href="catalog.html?category=women">Женщинам</a>
+                        <div class="dropdown-menu">
+                            <div class="dropdown-column">
+                                <h4>Одежда</h4>
+                                <a href="catalog.html?category=women&subcategory=dresses">Платья</a>
+                                <a href="catalog.html?category=women&subcategory=tops">Верхняя одежда</a>
+                                <a href="catalog.html?category=women&subcategory=jeans">Джинсы</a>
+                                <a href="catalog.html?category=women&subcategory=skirts">Юбки</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>Обувь</h4>
+                                <a href="catalog.html?category=women&subcategory=shoes">Туфли</a>
+                                <a href="catalog.html?category=women&subcategory=boots">Сапоги</a>
+                                <a href="catalog.html?category=women&subcategory=sneakers">Кроссовки</a>
+                            </div>
+                            <div class="dropdown-column">
+                                <h4>Аксессуары</h4>
+                                <a href="catalog.html?category=women&subcategory=bags">Сумки</a>
+                                <a href="catalog.html?category=women&subcategory=jewelry">Украшения</a>
+                                <a href="catalog.html?category=women&subcategory=hats">Головные уборы</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="catalog.html?category=men">Мужчинам</a>
+                        <div class="dropdown-menu">
+                            <!-- Similar structure for men -->
+                        </div>
+                    </li>
+                    <li class="nav-item"><a href="catalog.html?category=shoes">Обувь</a></li>
+                    <li class="nav-item"><a href="catalog.html?category=accessories">Аксессуары</a></li>
+                    <li class="nav-item"><a href="catalog.html?category=beauty">Красота</a></li>
+                    <li class="nav-item"><a href="catalog.html?discounts=true">SALE</a></li>
+                    <li class="nav-item"><a href="catalog.html?new=true">Новинки</a></li>
+                    <li class="nav-item"><a href="catalog.html?brands=true">Бренды</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slide active">
+                <div class="slide-content">
+                    <h1>Новая коллекция Осень-Зима 2024</h1>
+                    <p>Откройте для себя тренды нового сезона</p>
+                    <button class="hero-cta">Смотреть коллекцию</button>
+                </div>
+                <div class="slide-image">
+                    <img src="images/heroes/fall-winter.jpg" alt="Осень-Зима 2024">
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-features">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature">
+                        <div class="feature-icon">🚚</div>
+                        <div class="feature-text">
+                            <strong>Бесплатная доставка</strong>
+                            <span>При заказе от 3000₽</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">↩️</div>
+                        <div class="feature-text">
+                            <strong>Легкий возврат</strong>
+                            <span>В течение 14 дней</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">👑</div>
+                        <div class="feature-text">
+                            <strong>Бонусная программа</strong>
+                            <span>До 10% кешбэка</span>
+                        </div>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">📞</div>
+                        <div class="feature-text">
+                            <strong>Помощь стилиста</strong>
+                            <span>Бесплатная консультация</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Grid -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Популярные категории</h2>
+            <div class="categories-grid">
+                <a href="catalog.html?category=women&subcategory=dresses" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/dresses.jpg" alt="Платья">
+                    </div>
+                    <div class="category-name">Платья</div>
+                </a>
+                <a href="catalog.html?category=men&subcategory=shirts" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/shirts.jpg" alt="Рубашки">
+                    </div>
+                    <div class="category-name">Рубашки</div>
+                </a>
+                <a href="catalog.html?category=shoes&subcategory=sneakers" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/sneakers.jpg" alt="Кроссовки">
+                    </div>
+                    <div class="category-name">Кроссовки</div>
+                </a>
+                <a href="catalog.html?category=accessories&subcategory=bags" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/bags.jpg" alt="Сумки">
+                    </div>
+                    <div class="category-name">Сумки</div>
+                </a>
+                <a href="catalog.html?category=women&subcategory=jeans" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/jeans.jpg" alt="Джинсы">
+                    </div>
+                    <div class="category-name">Джинсы</div>
+                </a>
+                <a href="catalog.html?category=beauty" class="category-card">
+                    <div class="category-image">
+                        <img src="images/categories/beauty.jpg" alt="Красота">
+                    </div>
+                    <div class="category-name">Красота</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Arrivals -->
+    <section class="new-arrivals">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Новинки</h2>
+                <a href="catalog.html?new=true" class="section-link">Смотреть все</a>
+            </div>
+            <div class="products-grid" id="newArrivalsGrid">
+                <!-- Products loaded by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands Section -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title">Популярные бренды</h2>
+            <div class="brands-grid">
+                <a href="catalog.html?brand=zara" class="brand-logo">
+                    <img src="images/brands/zara.png" alt="Zara">
+                </a>
+                <a href="catalog.html?brand=h&m" class="brand-logo">
+                    <img src="images/brands/hm.png" alt="H&M">
+                </a>
+                <a href="catalog.html?brand=nike" class="brand-logo">
+                    <img src="images/brands/nike.png" alt="Nike">
+                </a>
+                <a href="catalog.html?brand=adidas" class="brand-logo">
+                    <img src="images/brands/adidas.png" alt="Adidas">
+                </a>
+                <a href="catalog.html?brand=levis" class="brand-logo">
+                    <img src="images/brands/levis.png" alt="Levi's">
+                </a>
+                <a href="catalog.html?brand=mac" class="brand-logo">
+                    <img src="images/brands/mac.png" alt="MAC">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Stylist -->
+    <section class="stylist-section">
+        <div class="container">
+            <div class="stylist-content">
+                <div class="stylist-text">
+                    <h2>Персональный стилист</h2>
+                    <p>Получите бесплатную консультацию от нашего стилиста и создайте идеальный образ</p>
+                    <ul class="stylist-features">
+                        <li>Подбор одежды по вашему типу фигуры</li>
+                        <li>Рекомендации по сочетанию вещей</li>
+                        <li>Создание капсульного гардероба</li>
+                    </ul>
+                    <button class="stylist-cta">Записаться на консультацию</button>
+                </div>
+                <div class="stylist-image">
+                    <img src="images/stylist.jpg" alt="Персональный стилист">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="StyleHub">
+                        <span>StyleHub</span>
+                    </div>
+                    <p>Модная одежда, обувь и аксессуары с доставкой по всей России</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="VKontakte">VK</a>
+                        <a href="#" aria-label="Telegram">TG</a>
+                        <a href="#" aria-label="Instagram">IG</a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Покупателям</h4>
+                    <ul>
+                        <li><a href="#">Доставка и оплата</a></li>
+                        <li><a href="#">Возврат и обмен</a></li>
+                        <li><a href="#">Помощь</a></li>
+                        <li><a href="#">Бонусная программа</a></li>
+                        <li><a href="#">Промокоды</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>О компании</h4>
+                    <ul>
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                        <li><a href="#">Новости</a></li>
+                        <li><a href="#">Контакты</a></li>
+                        <li><a href="#">Партнерство</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Свяжитесь с нами</h4>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <strong>8 800 555-35-35</strong>
+                            <span>Бесплатно по России</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>info@stylehub.ru</strong>
+                            <span>Электронная почта</span>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Ежедневно 9:00-21:00</strong>
+                            <span>Время работы</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <div class="copyright">
+                        © 2024 StyleHub. Все права защищены.
+                    </div>
+                    <div class="footer-links">
+                        <a href="#">Политика конфиденциальности</a>
+                        <a href="#">Пользовательское соглашение</a>
+                        <a href="#">Карта сайта</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Bottom Navigation -->
+    <div class="mobile-nav">
+        <a href="index.html" class="mobile-nav-item active">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 20V14H14V20H19V12H22L12 3L2 12H5V20H10Z"/>
+            </svg>
+            <span>Главная</span>
+        </a>
+        <a href="catalog.html" class="mobile-nav-item">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M10 3H4C3.44772 3 3 3.44772 3 4V10C3 10.5523 3.44772 11 4 11H10C10.5523 11 11 10.5523 11 10V4C11 3.44772 10.5523 3 10 3Z"/>
+                <path d="M20 3H14C13.4477 3 13 3.44772 13 4V10C13 10.5523 13.4477 11 14 11H20C20.5523 11 21 10.5523 21 10V4C21 3.44772 20.5523 3 20 3Z"/>
+                <path d="M10 13H4C3.44772 13 3 13.4477 3 14V20C3 20.5523 3.44772 21 4 21H10C10.5523 21 11 20.5523 11 20V14C11 13.4477 10.5523 13 10 13Z"/>
+                <path d="M20 13H14C13.4477 13 13 13.4477 13 14V20C13 20.5523 13.4477 21 14 21H20C20.5523 21 21 20.5523 21 20V14C21 13.4477 20.5523 13 20 13Z"/>
+            </svg>
+            <span>Каталог</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobileSearchBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M15.5 14H14.71L14.43 13.73C15.41 12.59 16 11.11 16 9.5C16 5.91 13.09 3 9.5 3C5.91 3 3 5.91 3 9.5C3 13.09 5.91 16 9.5 16C11.11 16 12.59 15.41 13.73 14.43L14 14.71V15.5L19 20.49L20.49 19L15.5 14ZM9.5 14C7.01 14 5 11.99 5 9.5C5 7.01 7.01 5 9.5 5C11.99 5 14 7.01 14 9.5C14 11.99 11.99 14 9.5 14Z"/>
+            </svg>
+            <span>Поиск</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobileCartBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17 18C18.1046 18 19 18.8954 19 20C19 21.1046 18.1046 22 17 22C15.8954 22 15 21.1046 15 20C15 18.8954 15.8954 18 17 18ZM1 2H5L7.68 14.39C7.77144 14.8504 8.02191 15.264 8.38755 15.5583C8.75318 15.8526 9.2107 16.009 9.68 16H19.4C19.8693 16.009 20.3268 15.8526 20.6925 15.5583C21.0581 15.264 21.3086 14.8504 21.4 14.39L23 6H6L7 18H19" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <span>Корзина</span>
+            <span class="mobile-badge">2</span>
+        </a>
+        <a href="#" class="mobile-nav-item" id="mobileProfileBtn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"/>
+            </svg>
+            <span>Профиль</span>
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/recommendations.js"></script>
+</body>
+</html>
